@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+
+:root{
+    --dark-cyan:hsl(158, 36%, 37%);
+    --cream:hsl(30, 38%, 92%);
+    --dark-blue:hsl(212, 21%, 14%);
+    --gray-blue: hsl(228, 12%, 48%);
+    --white:hsl(0, 0%, 100%);
+    --primary:'Montserrat', sans-serif;
+    --secondary:'Fraunces', serif;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--cream);
+    font-size: 14px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--primary);
+}
+
+.container{
+    margin: 15px;
+    
+}
+
+.grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 500px;
+    background-color: var(--white);
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.image img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.text{
+    padding: 1.5rem;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title, .first-price{
+    font-family: var(--secondary);
+}
+
+.subtitle{
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--gray-blue);
+    letter-spacing: 3px;
+    font-weight: 500;
+}
+
+.title{
+    text-transform: capitalize;
+    color: var(--dark-blue);
+    line-height: 1;
+    font-weight: 700;
+}
+
+.description{
+    color: var(--gray-blue);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.price{
+    display: flex;
+    align-items: center;
+}
+
+.first-price{
+    color: var(--dark-cyan);
+    font-size: 1.7rem;
+    margin-right: 1rem;
+}
+
+.last-price{
+    color: var(--gray-blue);
+    text-decoration: line-through;
+    font-size: 10px;
+}
+
+button{
+    width: 100%;
+    background-color: var(--dark-cyan);
+    border: none;
+    border-radius: 5px;
+    padding: 13px 0;
+    display: flex;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    font-family: var(--primary);
+    font-size: 10px;
+    transition: .5s;
+}
+
+
+button p{
+    font-size: 12px;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+button img{
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+}
+
+
+button:hover{
+    background-color: hsl(158, 37%, 25%);
+}
+
+@media screen and (max-width:699px){
+    .grid{
+        grid-template-columns: 1fr;
+    }
+
+    .container{
+        margin:0 40px
+    }
+
+    .text{
+        display: block;
+    }
+
+    .subtitle, .title, .description, .price, button{
+        margin-bottom: 20px;
+    }
+
+    button{
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:375px){
+    .grid{
+        grid-template-columns: 1fr;
+    }
+
+    .container{
+        margin:0 20px
+    }
+
+    .text{
+        display: block;
+        padding:1rem;
+    }
+
+    .subtitle, .title, .description, .price{
+        margin-bottom: 20px;
+    }
+
+    .subtitle{
+        font-size: 11px;
+    }
+
+    button{
+        margin: 0;
+    }
+
+}
+
+
